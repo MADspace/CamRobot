@@ -2,9 +2,9 @@ import cv2, numpy as np
 
 img = cv2.imread("ball.jpg", 0)
 
-#img = cv2.medianBlur(img,5)
-#cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)
-circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 10, param1=100, param2=30, minRadius=30, maxRadius=100)
+img = cv2.medianBlur(img, 5)
+#img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+circles = cv2.HoughCircles(img, cv2.cv.CV_HOUGH_GRADIENT, 1, 100, param1=100, param2=30)
 circles = np.uint16(np.around(circles))
 print circles
 for i in circles[0,:]:
